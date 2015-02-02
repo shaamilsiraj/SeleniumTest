@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 
-public class Seleniumtest {
+public class SeleniumTest {
 	WebDriver driver;
 	@Before
 
@@ -33,6 +33,9 @@ public class Seleniumtest {
 		WebElement SignIn = driver.findElement(By.id("signIn"));
 		SignIn.click();
 		Thread.sleep(15000);
+		
+		WebElement Inbox = driver.findElement(By.xpath("//*[@id=':50']/div/div[1]/span/a"));
+		Inbox.click();
 
 		// click on compose button
 		WebElement Compose = driver.findElement(By.xpath("//div[@class='z0']//div[contains(text(),'COMPOSE')]"));
@@ -49,7 +52,7 @@ public class Seleniumtest {
 		// enter some text in message area
 		WebElement Typemsg = driver.findElement(By.cssSelector("div[class='Am Al editable LW-avf']"));
 		Typemsg.sendKeys("CingleVue Technical QA Challenge"); 
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		
 		// click on close icon
 		WebElement Composeclose = driver.findElement(By.cssSelector("img[class='Ha']"));
@@ -76,6 +79,6 @@ public class Seleniumtest {
 	public void tearDown()
 	{
 		// browser will close by exiting the driver
-		driver.close();
+		driver.quit();
 	}
 }
